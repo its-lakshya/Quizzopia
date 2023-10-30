@@ -1,5 +1,6 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import login1 from "../assets/login1.png"
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -31,7 +32,7 @@ const Login = () => {
               LOGIN
             </button>
             <button className="hover:text-blue-500 flex justify-center items-center gap-x-1">
-              create your account
+              <Link to="./signIn">create your account</Link>
               <HiOutlineArrowLongRight />
             </button>
           </div>

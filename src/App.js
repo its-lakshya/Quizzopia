@@ -1,6 +1,9 @@
 import './App.css';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './components/Login';
+import SignIn from './components/SignIn';
+import { Provider } from 'react-redux';
+import  Store  from './store/Store';
 
 const AppLayout = () => {
   return (
@@ -18,6 +21,10 @@ const appRouter = createBrowserRouter([
       {
         path:"",
         element:<Login/>
+      },
+      {
+        path:"signIn",
+        element:<SignIn/>
       }
     ]
   }
@@ -25,9 +32,9 @@ const appRouter = createBrowserRouter([
 
 const App = () => {
   return (
-    // <Provider>
+    <Provider store={Store}>
       <RouterProvider router ={appRouter}/>
-    // </RouterProvider>
+    </Provider>
   )
 }
 
