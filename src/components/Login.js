@@ -1,15 +1,28 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-import login1 from "../assets/login1.png"
+import login1 from "../assets/login1.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const Login = () => {
+  const storedLoginDetails = useSelector((store) => store.signInDetails.details);
+  // const passwordStored = useSelector((store) => store.signInDetails.password);
+
+  const [userName, setUserName] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const handleLogin = () => {
+    console.log(storedLoginDetails)
+    // console.log(passwordStored)
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 ">
         <div className="w-1/2 flex justify-center items-center ">
-            <div className='w-72 h-72 rounded-full'>
-                <img src={login1} alt='login'/>
-            </div>
+          <div className="w-72 h-72 rounded-full">
+            <img src={login1} alt="login" />
+          </div>
         </div>
 
         <div className="w-1/2 flex justify-center items-center">
@@ -19,15 +32,18 @@ const Login = () => {
               <input
                 className=" rounded-3xl w-72 h-12 px-4 font-semibold bg-gray-100"
                 placeholder="Email"
+                onChange={(e) => setUserName(e.target.value)}
               />
               <input
                 className=" rounded-3xl w-72 h-12 px-4 font-semibold bg-gray-100"
                 placeholder="Password"
+                onChange={(e) => setUserName(e.target.value)}
               />
             </div>
             <button
               className="bg-green-500 w-72 h-12 rounded-3xl px-4 flex items-center justify-center text-white text-lg font-bold
                         hover:bg-gray-700"
+              onClick={()=> handleLogin()}
             >
               LOGIN
             </button>

@@ -1,8 +1,7 @@
 import login1 from "../assets/login1.png"
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { useDispatch } from "react-redux"
-import { storeLoginName, storeLoginPassword } from "../store/SignInSlice";
-import { useEffect, useState } from "react";
+import { storeDetails} from "../store/SignInSlice";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -17,13 +16,7 @@ const SignIn = () => {
     const [text, setText] = useState('SIGN IN')
 
     const handleLoginDetails = () => {
-        dispatch(storeLoginName(name))
-        dispatch(storeLoginPassword(password))
-    }
-    const showMessage = () => {
-      return (
-        <div>apple</div>
-      )
+        dispatch(storeDetails({name, password}))
     }
 
   return (
@@ -65,7 +58,6 @@ const SignIn = () => {
                 setVisibility('hidden')
               }
               }}
-              // onSubmit = {setAreDetailsFilled(true)}
             >
               {text}
             </button>
