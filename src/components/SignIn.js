@@ -3,8 +3,7 @@ import { useDispatch } from "react-redux"
 import { storeDetails} from "../store/SignInSlice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-
+import loginBackground from "../assets/loginBackground.jpg"
 
 const SignIn = () => {
 
@@ -20,7 +19,9 @@ const SignIn = () => {
     }
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen"
+    style={{backgroundImage:  `url(${loginBackground})`, }}
+    >
       <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 ">
         <div className="w-1/2 flex justify-center items-center ">
           <div className="w-72 h-72 rounded-full">
