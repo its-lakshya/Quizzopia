@@ -4,6 +4,10 @@ import Login from './components/Login';
 import SignIn from './components/SignIn';
 import { Provider } from 'react-redux';
 import  Store  from './store/Store';
+import Welcome from './components/Welcome';
+import Quiz from './components/Quiz';
+import Question1 from './components/Question1';
+import Question2 from './components/Question2';
 
 const AppLayout = () => {
   return (
@@ -23,8 +27,26 @@ const appRouter = createBrowserRouter([
         element:<Login/>
       },
       {
-        path:"signIn",
+        path:"signin",
         element:<SignIn/>
+      },
+      {
+        path:"welcome",
+        element:<Welcome/>
+      },
+      {
+        path:"quiz",
+        element:<Quiz/>,
+        children:[
+          {
+            path:"/quiz",
+            element:<Question1/>,
+          },
+          {
+            path:"/quiz/question2",
+            element:<Question2/>,
+          }
+        ]
       }
     ]
   }

@@ -1,9 +1,10 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import login1 from "../assets/login1.png";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import loginBackground from "../assets/loginBackground.jpg"
+import { storeCurrentUser } from "../store/SignInSlice";
 
 const Login = () => {
   const storedLoginDetails = useSelector(
@@ -14,11 +15,13 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [visibility, setVisibility] = useState("hidden");
+  const dispatch = useDispatch()
 
   const handleLogin = () => {
     storedLoginDetails.find((x) => {
       if (x.name === userName && x.password === password) {
-        setIsAuthenticated("./signIn");
+        setIsAuthenticated("./welcome");
+        dispatch(storeCurrentUser({userName, password}))
         return null;
       }
       return null;
@@ -52,7 +55,7 @@ const Login = () => {
             <div className="flex flex-col gap-y-4">
               <input
                 className=" rounded-3xl w-72 h-12 px-4 font-semibold bg-gray-100"
-                placeholder="Email"
+                placeholder="Email/Username"
                 onChange={(e) => setUserName(e.target.value)}
               />
               <input
@@ -70,7 +73,7 @@ const Login = () => {
               LOGIN
             </Link>
             <div className={`${visibility} text-red-500`}>
-              username of password is incorrect
+              username or password is incorrect
             </div>
             <button className="hover:text-blue-500 flex justify-center items-center gap-x-1">
               <Link to="./signIn">create your account</Link>

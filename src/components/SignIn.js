@@ -1,4 +1,4 @@
-import login1 from "../assets/login1.png"
+import signIn from "../assets/SignIn.png"
 import { useDispatch } from "react-redux"
 import { storeDetails} from "../store/SignInSlice";
 import { useState } from "react";
@@ -25,7 +25,7 @@ const SignIn = () => {
       <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 ">
         <div className="w-1/2 flex justify-center items-center ">
           <div className="w-72 h-72 rounded-full">
-            <img src={login1} alt="login" />
+            <img src={signIn} alt="login" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const SignIn = () => {
             <div className={`flex flex-col gap-y-4 ${visibility}`}>
               <input
                 className=" rounded-3xl w-72 h-12 px-4 font-semibold bg-gray-100"
-                placeholder="Email"
+                placeholder="Email/UserName"
                 onChange={(e)=>setName(e.target.value)}
               />
               <input
