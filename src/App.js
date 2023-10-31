@@ -5,9 +5,11 @@ import SignIn from './components/SignIn';
 import { Provider } from 'react-redux';
 import  Store  from './store/Store';
 import Welcome from './components/Welcome';
-import Quiz from './components/Quiz';
+import Game from './components/Game';
 import Question1 from './components/Question1';
 import Question2 from './components/Question2';
+import Question3 from './components/Question3'
+import Score from './components/Score';
 
 const AppLayout = () => {
   return (
@@ -35,19 +37,28 @@ const appRouter = createBrowserRouter([
         element:<Welcome/>
       },
       {
-        path:"quiz",
-        element:<Quiz/>,
+        path:"/game",
+        element:<Game/>,
         children:[
           {
-            path:"/quiz",
+            path:"/game/ques1",
             element:<Question1/>,
           },
           {
-            path:"/quiz/question2",
+            path:"/game/ques2",
             element:<Question2/>,
+          },
+          {
+            path:"/game/ques3",
+            element:<Question3/>,
           }
         ]
+      },
+      {
+        path:"/score",
+        element:<Score/>
       }
+
     ]
   }
 ])

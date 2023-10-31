@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 
-const Quiz = () => {
+const Game = () => {
     return (
         // <div className='text-white'>hello</div>
         <Outlet/>
     )
 }
 
-export default Quiz;
+export default Game;
