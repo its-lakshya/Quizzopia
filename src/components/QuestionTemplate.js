@@ -12,13 +12,13 @@ const QuestionTemplate = ({ question, opt1, opt2, opt3, opt4, answer, link }) =>
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white w-full gap-y-12">
-      <div className="text-4xl">
+    <div className="flex flex-col items-center justify-center h-screen text-white w-full gap-y-12 ">
+      <div className="text-4xl max-md:text-2xl text-center">
         {""+question}
       </div>
       <div
         className="flex flex-wrap [&>*]:border [&>*]:border-green-400 w-1/2 justify-evenly [&>*]:w-36 [&>*]:h-12 [&>*]:rounded-xl [&>*]:flex [&>*]:justify-center 
-      [&>*]:items-center [&>*]:bg-green-500 [&>*]:cursor-pointer  [&>*]:font-bold [&>*]:text-lg"
+      [&>*]:items-center [&>*]:bg-green-500 [&>*]:cursor-pointer  [&>*]:font-bold [&>*]:text-lg gap-y-6 gap-x-6"
       >
         <Link
           to={link}

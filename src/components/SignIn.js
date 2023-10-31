@@ -22,18 +22,19 @@ const SignIn = () => {
     <div className="flex justify-center items-center h-screen"
     style={{backgroundImage:  `url(${loginBackground})`, }}
     >
-      <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 ">
-        <div className="w-1/2 flex justify-center items-center ">
+      <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 max-lg:w-full max-lg:mx-12 max-md:flex-col 
+      max-md:items-center max-md:justify-center max-sm:mx-4 max-md:gap-y-8 ">
+        <div className="w-1/2 flex justify-center items-center max-md:w-full">
           <div className="w-72 h-72 rounded-full">
             <img src={signIn} alt="login" />
           </div>
         </div>
 
-        <div className="w-1/2 flex justify-center items-center">
+        <div className="w-1/2 flex justify-center items-center max-md:w-full">
           <div className="h-4/6 w-5/6 flex flex-col items-center justify-center gap-y-12">
             <div className="text-2xl font-extrabold">Sign In</div>
             {areDetailsFilled!==false && name!==null && password!==null ? (<div className='w-full flex justify-center items-center h-9'>
-              heyyy! your is created now you can{'\u00A0'}
+              Your account is created now you can{'\u00A0'}
               <Link to="/" className='text-blue-600'>login</Link>{'\u00A0'}
               to start
             </div>) : (null)}

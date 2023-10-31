@@ -10,10 +10,10 @@ const Welcome = () => {
       return <Navigate to="/" replace />;
   }
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full gap-y-12">
+    <div className="flex flex-col items-center justify-center h-screen w-full gap-y-12 max-md:gap-y-6">
       <div className="flex flex-col items-center justify-center text-white font-extrabold">
-        <div className="text-9xl">WELCOME</div>
-        <div className="text-4xl tracking-wider capitalize ">
+        <div className="text-9xl max-md:text-5xl">WELCOME</div>
+        <div className="text-4xl tracking-wider capitalize max-md:text-2xl">
           {" " + currentUser.userName}
         </div>
       </div>
