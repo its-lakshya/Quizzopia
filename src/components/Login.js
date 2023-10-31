@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import loginBackground from "../assets/loginBackground.jpg"
 import { storeCurrentUser } from "../store/SignInSlice";
+import { setAuthentication } from "../store/AuthenticationSlice";
 
 const Login = () => {
   const storedLoginDetails = useSelector(
@@ -22,6 +23,7 @@ const Login = () => {
       if (x.name === userName && x.password === password) {
         setIsAuthenticated("./welcome");
         dispatch(storeCurrentUser({userName, password}))
+        dispatch(setAuthentication());
         return null;
       }
       return null;

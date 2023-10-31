@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Welcome = () => {
   const currentUser = useSelector((store) => store.signInDetails.currentUser);
+  const authStatus = useSelector((store) => store.authenticationDetails.isAuthenticated)
 
+  if(!authStatus){
+      return <Navigate to="/" replace />;
+  }
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full gap-y-12">
       <div className="flex flex-col items-center justify-center text-white font-extrabold">
