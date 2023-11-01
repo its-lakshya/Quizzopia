@@ -45,9 +45,9 @@ const Login = () => {
     style={{backgroundImage:  `url(${loginBackground})` }}
     >
       <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 max-lg:w-full max-lg:mx-12 max-md:flex-col 
-      max-md:items-center max-md:justify-center max-sm:mx-4 max-md:gap-y-8">
+      max-md:items-center max-md:justify-center max-sm:mx-4 max-md:gap-y-8 max-md:h-auto max-md:py-12">
         <div className="w-1/2 flex justify-center items-center max-md:w-full">
-          <div className="w-72 h-72 rounded-full">
+          <div className="w-72 h-72 rounded-full max-sm:w-60 max-sm:h-60">
             <img src={login1} alt="login" />
           </div>
         </div>

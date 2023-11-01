@@ -18,9 +18,10 @@ const Score = () => {
                 text-9xl max-md:w-64 max-md:h-64"
         >
           {"" + score}
+          <span className='text-4xl'>/3</span>
         </div>
       </div>
-      <div className="font-bold text-4xl max-md:text-2xl">heyy! here are your score</div>
+      <div className="font-bold text-4xl max-md:text-2xlff text-center">heyy! here is your score</div>
     </div>
   );
 };
