@@ -4,10 +4,12 @@ import { Navigate } from "react-router-dom";
 
 const Welcome = () => {
   const currentUser = useSelector((store) => store.signInDetails.currentUser);
-  const authStatus = useSelector((store) => store.authenticationDetails.isAuthenticated)
+  const authStatus = useSelector(
+    (store) => store.authenticationDetails.isAuthenticated
+  );
 
-  if(!authStatus){
-      return <Navigate to="/" replace />;
+  if (!authStatus) {
+    return <Navigate to="/" replace />;
   }
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full gap-y-12 max-md:gap-y-6">
@@ -17,7 +19,8 @@ const Welcome = () => {
           {" " + currentUser.userName}
         </div>
       </div>
-      <Link to="/game/ques1"
+      <Link
+        to="/game/ques1"
         className="rounded px-5 py-2.5 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
       >
         <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>

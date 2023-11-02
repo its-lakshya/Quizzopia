@@ -3,7 +3,7 @@ import login1 from "../assets/login1.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import loginBackground from "../assets/loginBackground.jpg"
+import loginBackground from "../assets/loginBackground.jpg";
 import { storeCurrentUser } from "../store/SignInSlice";
 import { setAuthentication } from "../store/AuthenticationSlice";
 
@@ -16,13 +16,13 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [visibility, setVisibility] = useState("hidden");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
     storedLoginDetails.find((x) => {
       if (x.name === userName && x.password === password) {
         setIsAuthenticated("./welcome");
-        dispatch(storeCurrentUser({userName, password}))
+        dispatch(storeCurrentUser({ userName, password }));
         dispatch(setAuthentication());
         return null;
       }
@@ -41,19 +41,22 @@ const Login = () => {
   }, [userName, password]);
 
   return (
-    <div className="flex justify-center items-center h-screen"
-    style={{backgroundImage:  `url(${loginBackground})` }}
+    <div
+      className="flex justify-center items-center h-screen"
+      style={{ backgroundImage: `url(${loginBackground})` }}
     >
-      <div className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 max-lg:w-full max-lg:mx-12 max-md:flex-col 
-      max-md:items-center max-md:justify-center max-sm:mx-4 max-md:gap-y-8 max-md:h-auto max-md:py-12">
+      <div
+        className="bg-white rounded-lg w-4/6 h-[80%] flex px-4 max-lg:w-full max-lg:mx-12 max-md:flex-col 
+      max-md:items-center max-md:justify-center max-sm:mx-4 max-md:gap-y-8 max-md:h-auto max-md:py-12"
+      >
         <div className="w-1/2 flex justify-center items-center max-md:w-full">
           <div className="w-72 h-72 rounded-full max-sm:w-60 max-sm:h-60">
             <img src={login1} alt="login" />
           </div>
         </div>
-
+         
         <div className="w-1/2 flex justify-center items-center max-md:w-full">
-          <div className="h-4/6 w-5/6 flex flex-col items-center justify-center gap-y-12">
+          <div className="h-4/6 w-5/6 flex flex-col items-center justify-center gap-y-12 max-sm:gap-y-6">
             <div className="text-2xl font-extrabold">Member Login</div>
             <div className="flex flex-col gap-y-4">
               <input

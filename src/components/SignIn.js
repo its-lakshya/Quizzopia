@@ -33,14 +33,17 @@ const SignIn = () => {
         </div>
 
         <div className="w-1/2 flex justify-center items-center max-md:w-full">
-          <div className="h-4/6 w-5/6 flex flex-col items-center justify-center gap-y-12">
+          <div className="h-4/6 w-5/6 flex flex-col items-center justify-center gap-y-12 max-sm:gap-y-6">
             <div className="text-2xl font-extrabold ">Sign In</div>
             {areDetailsFilled !== false &&
             name !== null &&
             password !== null ? (
               <div className="w-full flex flex-col justify-center items-center h-9 max-sm:text-base gap-y-6 mt-6 text-center">
                 Your account is created now you can login to start!{"\u00A0"}
-                <Link to="/" className="font-bold bg-green-500 text-white px-6 py-2 rounded-lg">
+                <Link
+                  to="/"
+                  className="font-bold bg-green-500 text-white px-6 py-2 rounded-lg"
+                >
                   login
                 </Link>
                 {"\u00A0"}
