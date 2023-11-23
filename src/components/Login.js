@@ -29,7 +29,6 @@ const Login = () => {
       return null;
     });
   };
-
   const handleVisibility = () => {
     if (!isAuthenticated) {
       setVisibility("visible");

@@ -16,6 +16,7 @@ const SignIn = () => {
   const handleLoginDetails = () => {
     dispatch(storeDetails({ name, password }));
   };
+  
 
   return (
     <div
